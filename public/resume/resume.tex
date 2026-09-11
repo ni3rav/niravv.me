@@ -3,8 +3,8 @@
 % Packages:
 \usepackage[
     ignoreheadfoot, % set margins without considering header and footer
-    top=0.15 cm, % seperation between body and page edge from the top
-    bottom=0.06 cm, % seperation between body and page edge from the bottom
+    top=0.5 cm, % seperation between body and page edge from the top
+    bottom=0.5 cm, % seperation between body and page edge from the bottom
     left=0.82 cm, % seperation between body and page edge from the left
     right=0.82 cm, % seperation between body and page edge from the right
     footskip=1.0 cm, % seperation between body and footer
@@ -20,7 +20,7 @@
 \usepackage{amsmath} % for math
 \usepackage[
     pdftitle={Nirav Maheta's Resume},
-    pdfauthor={NIrav Maheta},
+    pdfauthor={Nirav Maheta},
     pdfcreator={LaTeX},
     colorlinks=true,
     urlcolor=primaryColor
@@ -53,15 +53,6 @@
 \setlength{\parindent}{0pt} % no indentation
 \setlength{\topskip}{0pt} % no top skip
 \setlength{\columnsep}{0cm} % set column seperation
-\makeatletter
-\let\ps@customFooterStyle\ps@plain % Copy the plain style to customFooterStyle
-
-\patchcmd{\ps@customFooterStyle}{\thepage}{
-    \color{gray}\textit{\small John Doe - Page \thepage{} of \pageref*{LastPage}}
-}{}{} % replace number by desired string
-
-\makeatother
-%\pagestyle{customFooterStyle}
 
 \titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\hrule height 0.25pt]
 
@@ -130,18 +121,6 @@
 } % new environment for the header
 
 
-\newcommand{\placelastupdatedtext}{% \placetextbox{<horizontal pos>}{<vertical pos>}{<stuff>}
-  \AddToShipoutPictureFG*{% Add <stuff> to current page foreground
-    \put(
-        \LenToUnit{\paperwidth-2 cm-0.18 cm+0.05cm},
-        \LenToUnit{\paperheight-1.0 cm}
-    ){\vtop{{\null}\makebox[0pt][c]{
-        \small\color{gray}\textit{Last updated in September 2024}\hspace{\widthof{Last updated in September 2024}}
-    }}}%
-  }%
-}%
-
-
 % save the original href command in a new command:
 \let\hrefWithoutArrow\href
 
@@ -157,7 +136,6 @@
     \newsavebox\ANDbox
     \sbox\ANDbox{}
 
-    %\placelastupdatedtext
     \begin{header}
         \textbf{\fontsize{24 pt}{24 pt}\selectfont Nirav Maheta}
 
@@ -195,7 +173,7 @@
         \begin{twocolentry}{
             
             
-        \textit{July 2023 – July 2027}}
+        \textit{July 2023 -- July 2027}}
             \textbf{Adani University}
 
             \textit{B.Tech. in Computer Science and Engineering}
@@ -214,7 +192,7 @@
     \section{Experience}
 
         \begin{twocolentry}{
-        \textit{June 2026 -- July 2026}}
+        \textit{June 2026 -- August 2026}}
             \textbf{Software Development Intern, Noovosoft Technologies LLP}
         \end{twocolentry}
 
@@ -256,10 +234,10 @@
 \vspace{0.02 cm}
 \begin{onecolentry}
     \begin{highlights}
-        \item Architected a Turborepo-based, multi-tenant headless CMS with workspace RBAC, team invitations, and a versioned, API-key-authenticated public REST API.
-        \item Published \texttt{hive-cms}, a type-safe Node.js SDK on npm, and integrated Gemini-assisted TipTap tools with encrypted bring-your-own-key storage.
+        \item Architected a multi-tenant headless CMS (Turborepo) with workspace RBAC, team invites, and a versioned, API-key-authenticated REST API.
+        \item Published \texttt{hive-cms}, a type-safe Node.js SDK on npm; integrated Gemini-assisted TipTap tools with encrypted bring-your-own-key storage.
         \item Built presigned Cloudflare R2 media uploads with asynchronous Azure Functions thumbhash generation.
-        \item \textbf{Tech:} TypeScript, React 19, Vite, TanStack Query, TipTap, Radix UI, Tailwind CSS, Express 5, Drizzle ORM, PostgreSQL, Turborepo, Azure Functions.
+        \item \textbf{Tech:} \textbf{TypeScript}, \textbf{React 19}, Vite, TanStack Query, TipTap, shadcn UI, Tailwind CSS, Express 5, Drizzle ORM, PostgreSQL, Turborepo, pnpm, Azure Functions.
     \end{highlights}
 \end{onecolentry}
 
@@ -275,10 +253,10 @@
 \vspace{0.02 cm}
 \begin{onecolentry}
     \begin{highlights}
-        \item Engineered an event-driven audio pipeline using direct presigned R2 uploads, Azure Service Bus, and KEDA-autoscaled Container Apps Jobs that scale from zero.
+        \item Engineered an event-driven audio pipeline with presigned R2 uploads, Azure Service Bus, and KEDA-autoscaled Container Apps Jobs scaling from zero.
         \item Replaced polling with queue-driven FFmpeg transcoding across four HLS renditions, including retries, abandon semantics, and dead-letter handling.
         \item Shipped authenticated worker callbacks, scheduled orphan-job cleanup, and adaptive-bitrate hls.js playback with in-player quality switching.
-        \item \textbf{Tech:} TypeScript, Next.js, ElysiaJS, Better Auth, Azure Service Bus, Azure Container Apps Jobs + KEDA, FFmpeg, Cloudflare R2, PostgreSQL (Neon), GitHub Actions/GHCR.
+        \item \textbf{Tech:} \textbf{TypeScript}, \textbf{Next.js}, \textbf{ElysiaJS}, Better Auth, Azure Service Bus, Azure Container Apps Jobs + KEDA, FFmpeg, Cloudflare R2, PostgreSQL (Neon), GitHub Actions/GHCR.
     \end{highlights}
 \end{onecolentry}
 
@@ -296,7 +274,7 @@
     \begin{highlights}
         \item Built a university-exclusive social media and threaded discussion forum with an administrative moderation panel.
         \item Designed a Next.js, ElysiaJS, and Neon Postgres architecture with secure authentication, RBAC, real-time interactions, and scalable administrative tooling.
-        \item \textbf{Tech:} TypeScript, Next.js, ElysiaJS, Neon Postgres, Drizzle ORM, Redis.
+        \item \textbf{Tech:} \textbf{TypeScript}, \textbf{Next.js}, \textbf{ElysiaJS}, Neon Postgres, Drizzle ORM, Redis.
     \end{highlights}
 \end{onecolentry}
 \vspace{0.05 cm}
@@ -325,7 +303,7 @@
 
 % ================= PRESIDENT =================
 \begin{twocolentry}{
-\textit{Aug 2025 – Aug 2026}}
+\textit{Aug 2025 -- Aug 2026}}
 \textbf{President, Adani Student's Programming and Development Club (ASPDC)}
 \end{twocolentry}
 
