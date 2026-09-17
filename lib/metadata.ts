@@ -9,7 +9,6 @@ const siteConfig = {
   author: {
     name: "Nirav Mehta",
     email: "niravv1405@gmail.com",
-    twitter: "@ni3rav",
     github: "ni3rav",
     linkedin: "nirav-mht",
   },
@@ -69,7 +68,6 @@ export const defaultMetadata: Metadata = {
     title: siteConfig.title,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
-    creator: siteConfig.author.twitter,
   },
   robots: {
     index: true,
@@ -126,7 +124,6 @@ export function constructMetadata({
       title,
       description,
       images: [image],
-      creator: siteConfig.author.twitter,
     },
     ...rest,
   };

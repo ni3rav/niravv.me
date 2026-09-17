@@ -26,7 +26,7 @@ export function ThemeToggle({ variant = "icon", className }: ThemeToggleProps) {
         onClick={toggleTheme}
         className={
           className ||
-          "inline-flex items-center text-sm text-muted-foreground hover:text-foreground underline decoration-dashed underline-offset-4 decoration-base02 hover:decoration-foreground/30 transition-all cursor-pointer"
+          "inline-flex items-center text-xs sm:text-sm text-muted-foreground hover:text-foreground underline decoration-dashed underline-offset-4 decoration-base02 hover:decoration-foreground/30 transition-all cursor-pointer"
         }
         aria-label={`Switch to ${(currentTheme ?? "dark") === "dark" ? "light" : "dark"} mode`}
       >
