@@ -11,7 +11,6 @@ export function PersonStructuredData() {
     email: "niravv1405@gmail.com",
     sameAs: [
       "https://github.com/ni3rav",
-      "https://twitter.com/ni3rav",
       "https://linkedin.com/in/nirav-mht",
     ],
     alumniOf: {
